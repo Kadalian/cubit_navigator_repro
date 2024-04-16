@@ -100,6 +100,14 @@ class MyHomePage extends StatelessWidget {
                 '${state.counterValue}',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
+              TextButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => BlocProvider(
+                              create: (_) => context.read<TestCubit>(),
+                              child: const MyHomePage(title: 'Second Page')))),
+                  child: Text('Navigate to Second Page'))
             ],
           ),
         ),
