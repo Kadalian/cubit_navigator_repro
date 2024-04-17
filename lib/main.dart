@@ -104,8 +104,8 @@ class MyHomePage extends StatelessWidget {
                   onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => BlocProvider(
-                              create: (_) => context.read<TestCubit>(),
+                          builder: (_) => BlocProvider.value(
+                              value: context.read<TestCubit>(),
                               child: const MyHomePage(title: 'Second Page')))),
                   child: Text('Navigate to Second Page'))
             ],
