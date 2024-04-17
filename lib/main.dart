@@ -101,13 +101,14 @@ class MyHomePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
               TextButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => BlocProvider.value(
-                              value: context.read<TestCubit>(),
-                              child: const MyHomePage(title: 'Second Page')))),
-                  child: Text('Navigate to Second Page'))
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => BlocProvider.value(
+                            value: context.read<TestCubit>(),
+                            child: const MyHomePage(title: 'Second Page')))),
+                child: const Text('Navigate to Second Page'),
+              )
             ],
           ),
         ),
